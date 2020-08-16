@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
+<!-- Active URL: https://ondras.zarovi.cz/sql/demo/?keyword=aes_cali -->
+<sql>
+<datatypes db="mysql">
+	<group color="rgb(238,238,170)" label="Numeric">
+		<type label="Integer" quote="" sql="INTEGER" length="0"/>
+	 	<type label="TINYINT" quote="" sql="TINYINT" length="0"/>
+	 	<type label="SMALLINT" quote="" sql="SMALLINT" length="0"/>
+	 	<type label="MEDIUMINT" quote="" sql="MEDIUMINT" length="0"/>
+	 	<type label="INT" quote="" sql="INT" length="0"/>
+		<type label="BIGINT" quote="" sql="BIGINT" length="0"/>
+		<type label="Decimal" quote="" sql="DECIMAL" length="1" re="DEC"/>
+		<type label="Single precision" quote="" sql="FLOAT" length="0"/>
+		<type label="Double precision" quote="" sql="DOUBLE" length="0" re="DOUBLE"/>
+	</group>
+
+	<group color="rgb(255,200,200)" label="Character">
+		<type label="Char" quote="'" sql="CHAR" length="1"/>
+		<type label="Varchar" quote="'" sql="VARCHAR" length="1"/>
+		<type label="Text" quote="'" sql="MEDIUMTEXT" length="0" re="TEXT"/>
+		<type label="Binary" quote="'" sql="BINARY" length="1"/>
+		<type label="Varbinary" quote="'" sql="VARBINARY" length="1"/>
+		<type label="BLOB" quote="'" sql="BLOB" length="0" re="BLOB"/>
+	</group>
+
+	<group color="rgb(200,255,200)" label="Date &amp; Time">
+		<type label="Date" quote="'" sql="DATE" length="0"/>
+		<type label="Time" quote="'" sql="TIME" length="0"/>
+		<type label="Datetime" quote="'" sql="DATETIME" length="0"/>
+		<type label="Year" quote="" sql="YEAR" length="0"/>
+		<type label="Timestamp" quote="'" sql="TIMESTAMP" length="0"/>
+	</group>
+	
+	<group color="rgb(200,200,255)" label="Miscellaneous">
+		<type label="ENUM" quote="" sql="ENUM" length="1"/>
+		<type label="SET" quote="" sql="SET" length="1"/>
+		<type label="Bit" quote="" sql="bit" length="0"/>
+	</group>
+</datatypes><table x="9" y="14" name="grupo_empresarial">
+<row name="idgrupo_empresarial" null="1" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<row name="nombre_grupo_empresarial" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="estado_grupo_empresarial" null="1" autoincrement="0">
+<datatype>INTEGER(2)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idgrupo_empresarial</part>
+</key>
+</table>
+<table x="368" y="0" name="empresa">
+<row name="idempresarial" null="1" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<row name="idgrupo_empresarial" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="grupo_empresarial" row="idgrupo_empresarial" />
+</row>
+<row name="nombre_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="nit_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default>NULL</default></row>
+<row name="ciudad_principal_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="direccion_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default>NULL</default></row>
+<row name="pais_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default>NULL</default></row>
+<row name="correo_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="idarea_tecnica_empresa" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="area_tecnica" row="idarea_tecnica" />
+</row>
+<row name="representante_legal_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="cargo_representante_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="telefono_movil_representante_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="sitio_web_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="fecha_corte_facturacion_empresa" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="correo_facturacion_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="idsesion_empresa" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="sesion" row="idsesion" />
+</row>
+<row name="estado_empresa" null="1" autoincrement="0">
+<datatype>INTEGER(2)</datatype>
+<default>NULL</default></row>
+<row name="representante_sistema_gestion" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="cargo_representante_sistema_gestion_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="telefono_movil_representante_sistema_gestion_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(300)</datatype>
+<default>NULL</default></row>
+<row name="correo_sistema_gestion_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(300)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idempresarial</part>
+</key>
+</table>
+<table x="8" y="147" name="sede">
+<row name="idsede" null="1" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<row name="idempresa" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="empresa" row="idempresarial" />
+</row>
+<row name="ciudad_sede" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="n_empleados" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<row name="direccion_sede" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="cantidad_procesos_sede" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="contacto_sede" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="cargo_Sede" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="telefono_movil_contacto_sede" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="correo_empresarial_sede" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idsede</part>
+</key>
+</table>
+<table x="1082" y="12" name="sesion">
+<row name="idsesion" null="1" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<row name="usuario_sesion" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="clave_sesion" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="rol_sesion" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="ultima_conexion_sesion" null="1" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>NULL</default></row>
+<row name="estado_sesion" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idsesion</part>
+</key>
+</table>
+<table x="1157" y="427" name="usuario">
+<row name="idusuario" null="1" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<row name="idsesion_usuario" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="sesion" row="idsesion" />
+</row>
+<row name="tipo_usuario" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default>NULL</default></row>
+<row name="nombre_usuario" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="documento_usuario" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="correo_usuario" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="telefono_usuario" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="direccion_usuario" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="mail_usuario" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="ciudad_usuario" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="pais_usuario" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idusuario</part>
+</key>
+</table>
+<table x="64" y="557" name="plantilla_maestra">
+<row name="idplantilla_maestra" null="1" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<row name="idarea_tecnica_plantilla" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="area_tecnica" row="idarea_tecnica" />
+</row>
+<row name="etiqueta_plantila" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="pais_plantilla" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="estado_plantilla" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idplantilla_maestra</part>
+</key>
+</table>
+<table x="471" y="837" name="item_grupo_plantilla">
+<row name="iditem_grupo_plantilla" null="1" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<row name="idgrupo_plantilla_item" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="grupo_plantilla" row="idgrupo_plantilla" />
+</row>
+<row name="etiqueta_item_grupo_plantilla" null="1" autoincrement="0">
+<datatype>VARCHAR(10)</datatype>
+<default>NULL</default></row>
+<row name="descripcion_item_grupo_plantilla" null="1" autoincrement="0">
+<datatype>VARCHAR(300)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>iditem_grupo_plantilla</part>
+</key>
+</table>
+<table x="75" y="838" name="grupo_plantilla">
+<row name="idgrupo_plantilla" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="idplantilla_maestra_grupo" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="plantilla_maestra" row="idplantilla_maestra" />
+</row>
+<row name="etiqueta_grupo_plantilla" null="1" autoincrement="0">
+<datatype>VARCHAR(10)</datatype>
+<default>NULL</default></row>
+<row name="titulo_conjunto" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idgrupo_plantilla</part>
+</key>
+</table>
+<table x="994" y="274" name="area_tecnica">
+<row name="idarea_tecnica" null="1" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<row name="etiqueta_area_tecnica" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="descripcion_area_tecnica" null="1" autoincrement="0">
+<datatype>VARCHAR(300)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idarea_tecnica</part>
+</key>
+</table>
+<table x="515" y="560" name="auditoria">
+<row name="idauditoria" null="1" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<row name="idempresas_ancla_auditoria" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="empresas_asociadas" row="idempresa_ancla" />
+</row>
+<row name="idempresa_asociada_auditoria" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="empresas_asociadas" row="idempresa_asociada" />
+</row>
+<row name="idsede_auditoria" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="sede" row="idsede" />
+</row>
+<row name="fecha_programada_auditoria" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="fecha_cierre_auditoria" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="idusuario_auditoria" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="usuario" row="idusuario" />
+</row>
+<row name="idplantilla_madre_auditoria" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="plantilla_maestra" row="idplantilla_maestra" />
+</row>
+<row name="idusuario_crea_auditoria" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="usuario" row="idusuario" />
+</row>
+<row name="estado_auditoria" null="1" autoincrement="0">
+<datatype>INTEGER(2)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idauditoria</part>
+</key>
+</table>
+<table x="885" y="405" name="empresas_asociadas">
+<row name="idempresa_ancla" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="empresa" row="idempresarial" />
+</row>
+<row name="idempresa_asociada" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="empresa" row="idempresarial" />
+</row>
+<row name="estado_empresas_asociadas" null="1" autoincrement="0">
+<datatype>INTEGER(2)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idempresa_ancla</part>
+<part>idempresa_asociada</part>
+</key>
+</table>
+<table x="811" y="785" name="auditoria_item">
+<row name="idauditoria_item" null="1" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="auditoria" row="idauditoria" />
+</row>
+<row name="iditem_grupo_platilla_auditoria_item" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="item_grupo_plantilla" row="iditem_grupo_plantilla" />
+</row>
+<row name="observacion_empresa" null="1" autoincrement="0">
+<datatype>VARCHAR(250)</datatype>
+<default>NULL</default></row>
+<row name="observacion_auditor" null="1" autoincrement="0">
+<datatype>VARCHAR(250)</datatype>
+<default>NULL</default></row>
+<row name="archivo_evidencia" null="1" autoincrement="0">
+<datatype>VARCHAR(300)</datatype>
+<default>NULL</default></row>
+<row name="estado_auditoria_item" null="1" autoincrement="0">
+<datatype>INT</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idauditoria_item</part>
+</key>
+<comment>referencia el item que se va auditar con sus observaciones y datos necesarios</comment>
+</table>
+<table x="885" y="607" name="plan_accion">
+<row name="idplan_accion" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="idauditoria_plan_accion" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="auditoria" row="idauditoria" />
+</row>
+<row name="fecha_realizacion" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="estado_plan_accion" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idplan_accion</part>
+</key>
+</table>
+<table x="1158" y="751" name="detalle_item_plan_accion">
+<row name="iddetalle_item_plan_accion" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="idauditoria_item_detalle_item" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="auditoria_item" row="idauditoria_item" />
+</row>
+<row name="idplan_accion_detalle_item" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="plan_accion" row="idplan_accion" />
+</row>
+<row name="accion_realizar" null="1" autoincrement="0">
+<datatype>VARCHAR(300)</datatype>
+<default>NULL</default></row>
+<row name="responsable" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="fecha_realizar" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="porcentaje_avance" null="1" autoincrement="0">
+<datatype>INT</datatype>
+<default>NULL</default></row>
+<row name="adjunto_evidencia" null="1" autoincrement="0">
+<datatype>VARCHAR(300)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>iddetalle_item_plan_accion</part>
+</key>
+<comment>se especifica el plan de accion de un item de auditoria en caso que se necesite incorporar en un plan</comment>
+</table>
+</sql>
